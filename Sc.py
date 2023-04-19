@@ -1,23 +1,39 @@
 import requests
 from bs4 import BeautifulSoup
 
-# make a request to the website and get its HTML content
-url = "https://en.wikipedia.org/wiki/Python_(programming_language)"
+# URL of the website to scrape reviews from
+url = "https://www.example.com/reviews"
+
+# Send a GET request to the website and store the response
 response = requests.get(url)
-html_content = response.content
 
-# parse the HTML content using BeautifulSoup
-soup = BeautifulSoup(html_content, "html.parser")
+# Parse the HTML content using BeautifulSoup
+soup = BeautifulSoup(response.content, 'html.parser')
 
-# find and print the title of the webpage
-title = soup.title.string
-print("Title: ", title)
+# Find all the review elements on the page
+reviews = soup.find_all('div', {'class': 'review'})
 
-# find and print the introduction paragraph of the Wikipedia page
-introduction = soup.find("div", {"class": "mw-parser-output"}).p.text
-print("Introduction: ", introduction)
+# Iterate over the review elements and extract the necessary information
+for review in reviews:
+    # Extract the rating of the review
+    rating = review.find('span', {'class': 'rating'}).text.strip()
 
-# find and print all the links on the webpage
-links = soup.find_all("a")
-for link in links:
-    print(link.get("href"))
+    # Extract the title of the review
+    title = review.find('h3', {'class': 'title'}).text.strip()
+
+    # Extract the text of the review
+    text = review.find('div', {'class': 'text'}).text.strip()
+
+    # Extract the author of the review
+    author = review.find('span', {'class': 'author'}).text.strip()
+
+    # Extract the date of the review
+    date = review.find('span', {'class': 'date'}).text.strip()
+
+    # Print the extracted information
+    print('Rating:', rating)
+    print('Title:', title)
+    print('Text:', text)
+    print('Author:', author)
+    print('Date:', date)
+    print('--------------')
