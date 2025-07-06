@@ -1,1 +1,28 @@
-# As a web scraping program, this code utilizes the power of HTTP GET requests to access a customer review website, parsing its HTML content using the popular Python library, BeautifulSoup. The program is designed to identify and extract specific information from the webpage such as the rating, title, text, author, and date of each review. This process is achieved by first finding all the review elements on the page and then applying a series of filters to extract the relevant data. Once the information has been extracted, the program then displays it in a structured and organized manner, providing a comprehensive overview of the customer reviews. This powerful web scraping tool can provide valuable insights into the opinions and experiences of customers, enabling businesses to make informed decisions and improve the quality of their products and services.
+"""
+# TripAdvisor Review Scraper – Pittsburgh Edition
+
+A web scraper built with Python, Selenium, and BeautifulSoup to extract hotel and restaurant reviews from TripAdvisor specific to Pittsburgh, PA. This project focuses on collecting and analyzing summer-season traveler sentiment.
+
+## 🔧 Features
+- Scrapes review titles, content, and star ratings
+- Targeted to hotels/restaurants in Pittsburgh
+- Outputs structured CSV for further analysis
+- Designed to integrate with sentiment analysis pipelines (VADER/TextBlob)
+
+## 📊 Use Cases
+- Sentiment trends among Pittsburgh visitors
+- Hospitality service benchmarking
+- Seasonal travel behavior insights
+
+## 🚀 Getting Started
+```bash
+pip install selenium beautifulsoup4
+python scraper.py
+```
+
+## 💡 Next Steps
+- Add review date filters
+- Integrate with sentiment analysis script
+- Build dashboard using Streamlit or Dash
+
+"""
