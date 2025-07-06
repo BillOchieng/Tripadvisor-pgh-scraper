@@ -1,4 +1,3 @@
-"""
 # TripAdvisor Review Scraper – Pittsburgh Edition
 
 A web scraper built with Python, Selenium, and BeautifulSoup to extract hotel and restaurant reviews from TripAdvisor specific to Pittsburgh, PA. This project focuses on collecting and analyzing summer-season traveler sentiment.
@@ -24,5 +23,3 @@ python scraper.py
 - Add review date filters
 - Integrate with sentiment analysis script
 - Build dashboard using Streamlit or Dash
-
-"""
