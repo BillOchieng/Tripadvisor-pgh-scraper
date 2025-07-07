@@ -1,0 +1,34 @@
+<!-- web/visualizer.html -->
+
+# Add a lightweight HTML/JS visualizer or script that reads sentiment data
+
+# Uses Chart.js or D3.js for charts
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Sentiment Chart</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <h2>TripAdvisor Sentiment Summary</h2>
+    <canvas id="sentimentChart"></canvas>
+    <script>
+        const data = {
+            labels: ['Positive', 'Neutral', 'Negative'],
+            datasets: [{
+                label: 'Sentiment Count',
+                data: [120, 55, 30], // dummy data
+                backgroundColor: ['green', 'gray', 'red']
+            }]
+        };
+        new Chart(document.getElementById('sentimentChart'), {
+            type: 'bar',
+            data: data
+        });
+    </script>
+</body>
+
+</html>
