@@ -1,0 +1,6 @@
+data/ (directory)
+Store your scraped CSVs or processed sentiment data.
+
+data/raw_reviews.csv
+
+data/sentiment_results.csv
