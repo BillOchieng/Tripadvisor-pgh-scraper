@@ -1,0 +1,42 @@
+version: '3.9'
+
+services:
+  dashboard:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: tripadvisor_dashboard
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./data:/app/data  # Share data files
+    environment:
+      - STREAMLIT_DISABLE_UPDATE_CHECK=true
+    restart: unless-stopped
+
+  # Optional: sentiment job (can be triggered manually or scheduled)
+  sentiment_worker:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: sentiment_analysis_job
+    command: ["python", "sentiment_analysis.py"]
+    volumes:
+      - ./data:/app/data
+    profiles: ["worker"]
+
+  # Optional: PostgreSQL or MongoDB service
+  # db:
+  #   image: postgres:14
+  #   restart: always
+  #   environment:
+  #     POSTGRES_USER: user
+  #     POSTGRES_PASSWORD: pass
+  #     POSTGRES_DB: sentiment_db
+  #   ports:
+  #     - "5432:5432"
+  #   volumes:
+  #     - db_data:/var/lib/postgresql/data
+
+# volumes:
+#   db_data:
