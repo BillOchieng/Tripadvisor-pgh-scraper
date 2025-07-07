@@ -1,0 +1,24 @@
+# Python cache
+__pycache__/
+*.pyc
+
+# Jupyter checkpoints
+notebooks/.ipynb_checkpoints/
+
+# Local data outputs
+data/
+
+# Virtual environments
+venv/
+.env
+
+# Git
+.git
+.gitignore
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Other project files not needed in container
+*.log
