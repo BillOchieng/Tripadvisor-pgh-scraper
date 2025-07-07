@@ -19,23 +19,6 @@ pip install selenium beautifulsoup4
 python scraper.py
 ```
 
-## Folder Structure
-Tripadvisor-pgh-scraper/
-│
-├── scraper.py
-├── sentiment_analysis.py
-├── app.py  # (or /dashboard if you expand it)
-├── data/
-│   ├── raw_reviews.csv
-│   └── sentiment_results.csv
-├── notebooks/
-│   └── eda.ipynb
-├── README.md
-├── requirements.txt
-├── pyproject.toml
-├── poetry.lock
-└── .gitignore
-
 ## 💡 Next Steps
 - Add review date filters
 - Integrate with sentiment analysis script
