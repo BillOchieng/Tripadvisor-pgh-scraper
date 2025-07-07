@@ -23,5 +23,6 @@ python scraper.py
 - Add review date filters
 - Integrate with sentiment analysis script
 - Build dashboard using Streamlit or Dash
-
-**Want me to help you scaffold any of these files or kickstart the sentiment analysis or dashboard script?**
+- Run scraper.py → populates data/raw_reviews.csv
+- Run sentiment_analysis.py → creates data/sentiment_results.csv
+- Run streamlit run app.py → launches your dashboard
