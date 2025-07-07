@@ -1,0 +1,6 @@
+dashboard/ or app.py
+If building with Streamlit or Dash, create:
+
+app.py for dashboard logic
+
+Or organize a full /dashboard folder for components
