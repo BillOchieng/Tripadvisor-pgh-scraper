@@ -1,0 +1,6 @@
+# Prevent tracking unnecessary files:
+
+__pycache__/
+*.pyc
+.env
+data/
